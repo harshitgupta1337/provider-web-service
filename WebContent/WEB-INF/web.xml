@@ -17,4 +17,12 @@
     <servlet-name>servlet</servlet-name>
     <url-pattern>/Servlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>UpdateParams</servlet-name>
+    <servlet-class>com.sit.marketplace.paramsform.ParamsFormSetter</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateParams</servlet-name>
+    <url-pattern>/updateParams</url-pattern>
+  </servlet-mapping>
 </web-app>
