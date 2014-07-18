@@ -25,4 +25,12 @@
     <servlet-name>UpdateParams</servlet-name>
     <url-pattern>/updateParams</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>UpdateEucalyptusParams</servlet-name>
+    <servlet-class>com.sit.marketplace.paramsform.EucalyptusParamsFormSetter</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateEucalyptusParams</servlet-name>
+    <url-pattern>/updateEucalyptusParams</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -1,0 +1,49 @@
+package com.sit.marketplace.paramsform;
+
+import java.io.IOException;
+import java.util.Map;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.sit.marketplace.params.EucalyptusParams;
+import com.sit.marketplace.params.Params;
+
+public class EucalyptusParamsFormSetter extends HttpServlet{
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String clcHost;
+		int clcPort;
+		String awsAccessKeyId;
+		String secretAccessKey;
+		String emi;
+		String securityGroup;
+		
+		try{
+			clcHost = request.getParameter("clcHost");
+			clcPort = Integer.parseInt(request.getParameter("clcPort"));
+			awsAccessKeyId = request.getParameter("awsAccessKeyId");
+			secretAccessKey = request.getParameter("secretAccessKey");
+			emi = request.getParameter("emi");
+			securityGroup = request.getParameter("securityGroup");
+			if(clcHost == "" || awsAccessKeyId == "" || secretAccessKey == "" || emi == "" || securityGroup == ""){
+				response.getWriter().println("One of the parameters was empty");
+			} else {
+				EucalyptusParams.getInstance().setAwsAccessKeyId(awsAccessKeyId);
+				EucalyptusParams.getInstance().setClcHost(clcHost);
+				EucalyptusParams.getInstance().setClcPort(clcPort);
+				EucalyptusParams.getInstance().setEmi(emi);
+				EucalyptusParams.getInstance().setSecretAccessKey(secretAccessKey);
+				EucalyptusParams.getInstance().setSecurityGroup(securityGroup);
+				response.sendRedirect("EucalyptusParams.jsp");
+			}
+			
+		}catch(Exception e){
+			response.getWriter().println(e);
+		}
+    }
+}
