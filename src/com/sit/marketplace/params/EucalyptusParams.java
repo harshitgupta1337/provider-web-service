@@ -9,7 +9,8 @@ public class EucalyptusParams {
 	private static String DEFAULT_AWS_ACCESS_KEY_ID = "4OFCOBFGPGVINNR7H6TMG";
 	private static String DEFAULT_AWS_SECRET_KEY = "G0WewmHyE5KYaGcVWvSAQrsBsPnJb2qQOPIIc74h";
 	private static String DEFAULT_EMI = "emi-89974121";
-	private static String DEFAULT_SECURITY_GROUP = "default";	
+	private static String DEFAULT_SECURITY_GROUP = "default";
+	private static String DEFAULT_PRIVATE_KEY = "euca-demo"; 
 	
 	private String clcHost;
 	private int clcPort;
@@ -17,6 +18,7 @@ public class EucalyptusParams {
 	private String secretAccessKey;
 	private String emi;
 	private String securityGroup;
+	private String privateKey;
 	
 	public void setClcHost(String clcHost){
 		this.clcHost = clcHost;
@@ -54,6 +56,12 @@ public class EucalyptusParams {
 	public String getSecurityGroup(){
 		return securityGroup;
 	}
+	public void setPrivateKey(String privateKey){
+		this.privateKey = privateKey;
+	}
+	public String getPrivateKey(){
+		return privateKey;
+	}
 	public static EucalyptusParams getInstance() {
 		if(instance == null) {
 			instance = new EucalyptusParams();
@@ -63,6 +71,7 @@ public class EucalyptusParams {
 			instance.setEmi(DEFAULT_EMI);
 			instance.setSecretAccessKey(DEFAULT_AWS_SECRET_KEY);
 			instance.setSecurityGroup(DEFAULT_SECURITY_GROUP);
+			instance.setPrivateKey(DEFAULT_PRIVATE_KEY);
 		}
 		return instance;
 	} 

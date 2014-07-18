@@ -33,4 +33,12 @@
     <servlet-name>UpdateEucalyptusParams</servlet-name>
     <url-pattern>/updateEucalyptusParams</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>LaunchInstances</servlet-name>
+    <servlet-class>com.sit.marketplace.eucalaunch.LaunchInstances</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LaunchInstances</servlet-name>
+    <url-pattern>/launchInstances</url-pattern>
+  </servlet-mapping>
 </web-app>

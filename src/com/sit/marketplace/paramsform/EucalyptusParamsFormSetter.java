@@ -22,6 +22,7 @@ public class EucalyptusParamsFormSetter extends HttpServlet{
 		String secretAccessKey;
 		String emi;
 		String securityGroup;
+		String privateKey;
 		
 		try{
 			clcHost = request.getParameter("clcHost");
@@ -30,7 +31,8 @@ public class EucalyptusParamsFormSetter extends HttpServlet{
 			secretAccessKey = request.getParameter("secretAccessKey");
 			emi = request.getParameter("emi");
 			securityGroup = request.getParameter("securityGroup");
-			if(clcHost == "" || awsAccessKeyId == "" || secretAccessKey == "" || emi == "" || securityGroup == ""){
+			privateKey = request.getParameter("privateKey");
+			if(clcHost == "" || awsAccessKeyId == "" || secretAccessKey == "" || emi == "" || securityGroup == "" || privateKey == ""){
 				response.getWriter().println("One of the parameters was empty");
 			} else {
 				EucalyptusParams.getInstance().setAwsAccessKeyId(awsAccessKeyId);
@@ -39,6 +41,7 @@ public class EucalyptusParamsFormSetter extends HttpServlet{
 				EucalyptusParams.getInstance().setEmi(emi);
 				EucalyptusParams.getInstance().setSecretAccessKey(secretAccessKey);
 				EucalyptusParams.getInstance().setSecurityGroup(securityGroup);
+				EucalyptusParams.getInstance().setPrivateKey(privateKey);
 				response.sendRedirect("EucalyptusParams.jsp");
 			}
 			

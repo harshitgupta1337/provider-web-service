@@ -15,6 +15,7 @@ Current awsAccessKeyId : <%= EucalyptusParams.getInstance().getAwsAccessKeyId()%
 Current secretAccessKey : <%= EucalyptusParams.getInstance().getSecretAccessKey()%><br>
 Current emi : <%= EucalyptusParams.getInstance().getEmi()%><br>
 Current securityGroup : <%= EucalyptusParams.getInstance().getSecurityGroup()%><br>
+Current privateKey : <%= EucalyptusParams.getInstance().getPrivateKey()%><br>
 <br><br><br><br>
 Enter the new parameters :
 <form method="post" action="updateEucalyptusParams" name="UpdateEucalyptusParamsForm">
@@ -24,6 +25,7 @@ Enter new awsAccessKeyId : <input name="awsAccessKeyId" value="<%=EucalyptusPara
 Enter new secretAccessKey : <input name="secretAccessKey" value="<%=EucalyptusParams.getInstance().getSecretAccessKey()%>">  <br>
 Enter new emi : <input name="emi" value="<%=EucalyptusParams.getInstance().getEmi()%>">  <br>
 Enter new securityGroup : <input name="securityGroup" value="<%=EucalyptusParams.getInstance().getSecurityGroup()%>">  <br>
+Enter new privateKey : <input name="privateKey" value="<%=EucalyptusParams.getInstance().getPrivateKey()%>">  <br>
 <button value="UpdateEucalyptusParams" name="UpdateEucalyptusParams">Update Eucalyptus Parameters</button>&nbsp;<button value="Reset" name="Reset" type="reset">Reset</button><br>
 </form>
 
