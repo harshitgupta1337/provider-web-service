@@ -7,9 +7,12 @@ public class Params {
 	
 	private static Params instance = null;
 	
-	private static double DEFAULT_PARAM_1 = 10.0;
-	private static double DEFAULT_PARAM_2 = 20.0;
-	private static double DEFAULT_PARAM_3 = 30.0;
+	private static double DEFAULT_TRUST = 10.0;
+	private static double DEFAULT_COST_PER_VM_PER_HOUR = 20.0;
+	private static double DEFAULT_MIN_AVAILABILITY = 30.0;
+	public static String TRUST_PARAM_NAME = "trust";
+	public static String COST_PARAM_NAME = "costPerVmPerHour";
+	public static String MIN_AVAILABILITY_PARAM_NAME = "minAvailability";
 	
 	private Map<String, Double> paramsMap;
 	
@@ -23,9 +26,9 @@ public class Params {
 	
 	protected Params() {
 		paramsMap = new HashMap<String, Double>();
-		paramsMap.put("param1", DEFAULT_PARAM_1);
-		paramsMap.put("param2", DEFAULT_PARAM_2);
-		paramsMap.put("param3", DEFAULT_PARAM_3);
+		paramsMap.put(TRUST_PARAM_NAME, DEFAULT_TRUST);
+		paramsMap.put(MIN_AVAILABILITY_PARAM_NAME, DEFAULT_MIN_AVAILABILITY);
+		paramsMap.put(COST_PARAM_NAME, DEFAULT_COST_PER_VM_PER_HOUR);
 	}
 	
 	public static Params getInstance() {
