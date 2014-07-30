@@ -48,5 +48,13 @@
   <servlet-mapping>
     <servlet-name>FreeVms</servlet-name>
     <url-pattern>/getNoOfFreeVms</url-pattern>
+  </servlet-mapping> 
+  <servlet>
+    <servlet-name>GetVmStatus</servlet-name>
+    <servlet-class>com.sit.marketplace.eucalaunch.DescribeInstanceStatus</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetVmStatus</servlet-name>
+    <url-pattern>/getVmStatus</url-pattern>
   </servlet-mapping>  
 </web-app>
